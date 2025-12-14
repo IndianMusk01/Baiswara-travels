@@ -1,0 +1,45 @@
+<div class="container" style="padding-top: 40px;">
+    <div class="admin-header">
+        <h2>Admin Dashboard</h2>
+        <button mat-raised-button class="btn-gold">Add New Bus</button>
+    </div>
+
+    <div class="stats-grid">
+        <div class="card-custom stat-card">
+            <h3>Total Bookings today</h3>
+            <p class="number">124</p>
+        </div>
+        <div class="card-custom stat-card">
+            <h3>Revenue today</h3>
+            <p class="number">₹1,45,000</p>
+        </div>
+        <div class="card-custom stat-card">
+            <h3>Active Buses</h3>
+            <p class="number">18</p>
+        </div>
+    </div>
+
+    <h3 class="mt-4">Manage Routes</h3>
+    <div class="card-custom">
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="border-bottom: 2px solid #eee; text-align: left;">
+                    <th style="padding: 15px;">Route ID</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Distance</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let route of routes" style="border-bottom: 1px solid #eee;">
+                    <td style="padding: 15px;">#{{route.id}}</td>
+                    <td>{{route.source}}</td>
+                    <td>{{route.destination}}</td>
+                    <td>{{route.distance}} km</td>
+                    <td><button mat-button color="warn">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+.seat-layout {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.deck {
+    text-align: center;
+}
+
+.deck-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.bus-container {
+    border: 2px solid #ddd;
+    border-radius: 20px 20px 4px 4px;
+    padding: 20px 10px;
+    background: white;
+    width: 140px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.seat.sleeper {
+    height: 70px;
+    /* Longer for sleeper */
+}
+
+/* Hover effect */
+.seat:not(.booked):hover {
+    border-color: #D4AF37;
+    background-color: #fff9e6;
+}
+
+/* Selected State */
+.seat.selected {
+    background-color: #1B1464;
+    /* Baiswara Blue */
+    border-color: #1B1464;
+    color: white;
+}
+
+.seat.selected::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+}
+
+/* Booked State */
+.seat.booked {
+    background-color: #e0e0e0;
+    border-color: #d0d0d0;
+    cursor: not-allowed;
+}
+
+/* Aisle gap helper */
+.aisle-gap {
+    width: 30px;
+}

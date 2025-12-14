@@ -1,0 +1,43 @@
+/* Global Styles */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #D4AF37; /* Gold */
+  --secondary-color: #1B1464; /* Deep Blue */
+  --accent-color: #f7f7f7;
+  --text-color: #333;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.btn-gold {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+.text-gold {
+  color: var(--primary-color);
+}
+
+.text-blue {
+  color: var(--secondary-color);
+}
+
+.card-custom {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,96 @@
+.bus-card {
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid #D4AF37;
+    /* Baiswara Gold */
+    flex-wrap: wrap;
+}
+
+.bus-info h3 {
+    margin: 0;
+    color: #1B1464;
+    font-size: 1.2rem;
+}
+
+.badge {
+    background: #eee;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: normal;
+    margin-left: 8px;
+}
+
+.rating {
+    margin: 5px 0 0;
+    color: #D4AF37;
+    font-weight: bold;
+}
+
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.time {
+    font-size: 1.2rem;
+    color: #333;
+    display: block;
+}
+
+.city {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.duration .line {
+    color: #ccc;
+    display: block;
+    line-height: 0.5;
+}
+
+.duration .hours {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.price-action {
+    text-align: right;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1B1464;
+}
+
+.seats-left {
+    font-size: 0.8rem;
+    margin: 5px 0 10px;
+}
+
+@media (max-width: 768px) {
+    .bus-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .time-info {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .price-action {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

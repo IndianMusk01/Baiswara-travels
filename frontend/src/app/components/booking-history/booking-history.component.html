@@ -1,0 +1,31 @@
+<div class="container" style="padding-top: 40px;">
+    <h2>My Bookings</h2>
+    <div class="booking-list">
+        <div class="card-custom booking-card" *ngFor="let booking of bookings">
+            <div class="header">
+                <span class="ref">Ref: {{booking.bookingReference}}</span>
+                <span class="status" [class.confirmed]="booking.status === 'CONFIRMED'">{{booking.status}}</span>
+            </div>
+
+            <div class="trip-details">
+                <h3>{{booking.trip.sourceCity}} → {{booking.trip.destinationCity}}</h3>
+                <p>{{booking.trip.departureTime | date:'medium'}}</p>
+                <p class="bus-name">{{booking.trip.bus.operatorName}}</p>
+            </div>
+
+            <div class="passengers">
+                <h4>Passengers ({{booking.passengers.length}})</h4>
+                <ul>
+                    <li *ngFor="let p of booking.passengers">
+                        {{p.name}} ({{p.age}}, {{p.gender}}) - Seat {{p.seatNumber}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer">
+                <span class="total">Total Paid: ₹{{booking.totalAmount}}</span>
+                <button mat-button color="primary">Download Ticket</button>
+            </div>
+        </div>
+    </div>
+</div>

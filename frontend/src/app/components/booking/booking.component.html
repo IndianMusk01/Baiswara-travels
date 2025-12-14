@@ -1,0 +1,81 @@
+<div class="container" style="padding-top: 30px;">
+    <div class="booking-grid">
+        <!-- Left: Seat Selection -->
+        <div class="card-custom seat-section">
+            <h3 class="section-title">Select Seats</h3>
+            <div class="seat-legend">
+                <span class="legend-item"><span class="box available"></span> Available</span>
+                <span class="legend-item"><span class="box selected"></span> Selected</span>
+                <span class="legend-item"><span class="box booked"></span> Booked</span>
+            </div>
+
+            <div class="seat-layout">
+                <div class="deck lower">
+                    <div class="deck-title">Lower Deck</div>
+                    <div class="bus-container">
+                        <div class="driver-cabin" style="text-align: right; margin-bottom: 15px; color: #999;">
+                            <mat-icon>steering_wheel</mat-icon>
+                        </div>
+
+                        <!-- Mock Rows -->
+                        <div class="row" *ngFor="let row of lowerDeckRows">
+                            <div class="seat" [class.selected]="isSeatSelected(row.s1)" [class.booked]="row.s1.booked"
+                                (click)="toggleSeat(row.s1)"></div>
+                            <!-- Aisle -->
+                            <div class="aisle-gap"></div>
+                            <div class="seat" [class.selected]="isSeatSelected(row.s2)" [class.booked]="row.s2.booked"
+                                (click)="toggleSeat(row.s2)"></div>
+                            <div class="seat" [class.selected]="isSeatSelected(row.s3)" [class.booked]="row.s3.booked"
+                                (click)="toggleSeat(row.s3)"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Passenger Details & Summary -->
+        <div class="card-custom summary-section">
+            <h3 class="section-title">Booking Details</h3>
+
+            <div *ngIf="selectedSeats.length === 0" class="no-seats">
+                <p>Please select a seat to proceed.</p>
+            </div>
+
+            <div *ngIf="selectedSeats.length > 0">
+                <div class="passenger-form" *ngFor="let seat of selectedSeats; let i = index">
+                    <h4>Seat: {{seat.no}}</h4>
+                    <mat-form-field appearance="outline" class="full-width">
+                        <mat-label>Passenger Name</mat-label>
+                        <input matInput [(ngModel)]="passengers[i].name">
+                    </mat-form-field>
+                    <div class="flex-row">
+                        <mat-form-field appearance="outline" style="width: 80px;">
+                            <mat-label>Age</mat-label>
+                            <input matInput type="number" [(ngModel)]="passengers[i].age">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Gender</mat-label>
+                            <mat-select [(ngModel)]="passengers[i].gender">
+                                <mat-option value="Male">Male</mat-option>
+                                <mat-option value="Female">Female</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="price-breakdown">
+                    <div class="row-bw">
+                        <span>Total Seats</span>
+                        <span>{{selectedSeats.length}}</span>
+                    </div>
+                    <div class="row-bw total">
+                        <span>Total Fare</span>
+                        <span>₹{{calculateTotal()}}</span>
+                    </div>
+                </div>
+
+                <button mat-raised-button class="btn-gold full-width" (click)="confirmBooking()">PROCEED TO PAY</button>
+            </div>
+        </div>
+    </div>
+</div>

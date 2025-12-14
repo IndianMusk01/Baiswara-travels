@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #1B1464;
+    /* Deep Blue */
+    color: #D4AF37;
+    /* Gold */
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #D4AF37;
+    letter-spacing: 1px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+button[mat-button] {
+    color: white;
+    font-weight: 500;
+}

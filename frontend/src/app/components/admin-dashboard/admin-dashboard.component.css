@@ -1,0 +1,35 @@
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    background: white;
+}
+
+.stat-card h3 {
+    color: #777;
+    font-size: 1rem;
+}
+
+.number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1B1464;
+    margin: 10px 0;
+}
+
+.mt-4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,52 @@
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Welcome to <span class="text-gold">Baiswara Golden Express</span></h1>
+        <p>Premium Bus Travel Across India</p>
+
+        <div class="search-box card-custom">
+            <mat-form-field appearance="outline">
+                <mat-label>From</mat-label>
+                <input matInput [(ngModel)]="source" placeholder="Source City">
+                <mat-icon matSuffix>departure_board</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>To</mat-label>
+                <input matInput [(ngModel)]="destination" placeholder="Destination City">
+                <mat-icon matSuffix>place</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Travel Date</mat-label>
+                <input matInput [matDatepicker]="picker" [(ngModel)]="date">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-raised-button class="search-btn btn-gold" (click)="searchBuses()">
+                SEARCH BUSES
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container features">
+    <h2>Why Choose Baiswara?</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <mat-icon>airline_seat_recline_extra</mat-icon>
+            <h3>Luxury Sleepers</h3>
+            <p>Experience hotel-like comfort on wheels.</p>
+        </div>
+        <div class="feature-card">
+            <mat-icon>security</mat-icon>
+            <h3>Safe & Secure</h3>
+            <p>GPS tracking and verified staff.</p>
+        </div>
+        <div class="feature-card">
+            <mat-icon>timelapse</mat-icon>
+            <h3>On Time</h3>
+            <p>Punctuality is our promise.</p>
+        </div>
+    </div>
+</div>

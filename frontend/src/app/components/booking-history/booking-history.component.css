@@ -1,0 +1,55 @@
+.booking-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.ref {
+    font-weight: bold;
+    color: #555;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #ccc;
+}
+
+.status.confirmed {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.trip-details h3 {
+    margin: 0;
+    color: #1B1464;
+}
+
+.bus-name {
+    color: #D4AF37;
+    font-weight: 500;
+}
+
+.footer {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.1rem;
+}

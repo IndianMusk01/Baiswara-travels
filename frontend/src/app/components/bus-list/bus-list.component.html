@@ -1,0 +1,36 @@
+<div class="container" style="padding-top: 40px;">
+    <h2>Available Buses from {{source}} to {{destination}}</h2>
+    <p class="text-secondary">Showing results for {{date | date:'mediumDate'}}</p>
+
+    <div class="bus-list">
+        <div class="card-custom bus-card" *ngFor="let trip of trips">
+            <div class="bus-info">
+                <h3>{{trip.bus.operatorName}} <span class="badge">{{trip.bus.type}}</span></h3>
+                <p class="rating">★ 4.5 <span style="color: #666; font-size: 0.9em;">(124 ratings)</span></p>
+            </div>
+
+            <div class="time-info">
+                <div class="time-block">
+                    <strong class="time">{{trip.departureTime | date:'shortTime'}}</strong>
+                    <span class="city">{{trip.sourceCity}}</span>
+                </div>
+                <div class="duration">
+                    <span class="line">----------------</span>
+                    <span class="hours">8h 30m</span>
+                </div>
+                <div class="time-block">
+                    <strong class="time">{{trip.arrivalTime | date:'shortTime'}}</strong>
+                    <span class="city">{{trip.destinationCity}}</span>
+                </div>
+            </div>
+
+            <div class="price-action">
+                <div class="price">
+                    <span class="currency">₹</span>{{trip.fare}}
+                </div>
+                <p class="seats-left text-danger">12 Seats Left</p>
+                <button mat-raised-button class="btn-gold" (click)="viewSeats(trip.id)">VIEW SEATS</button>
+            </div>
+        </div>
+    </div>
+</div>
