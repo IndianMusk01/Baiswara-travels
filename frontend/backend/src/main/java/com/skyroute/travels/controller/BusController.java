@@ -34,8 +34,6 @@ public class BusController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Trip> getTrip(@PathVariable Long id) {
-        return tripRepository.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+        return tripRepository.findById(id) .map(ResponseEntity::ok) .orElse(ResponseEntity.notFound().build());
     }
 }
